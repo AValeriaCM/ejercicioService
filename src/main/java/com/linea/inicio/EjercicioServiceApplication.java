@@ -1,0 +1,23 @@
+package com.linea.inicio;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@ComponentScan("com.linea") 
+@EntityScan(basePackages = {"com.linea"})
+@EnableConfigurationProperties
+@EnableJpaRepositories(basePackages = "com.linea")
+@EnableScheduling
+public class EjercicioServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EjercicioServiceApplication.class, args);
+	}
+
+}

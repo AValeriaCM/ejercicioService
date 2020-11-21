@@ -1,0 +1,1 @@
+3,Johans,Gonzalez,sistemas;6,andres,chila,sistemas;6,,chila,sistemas;8,852,chila,sistemas;8,852,chila,null;0,852,chila,null;0,null,chila,null;0,null,castañeda,null;1,camilo,alfaro,sistemas;200,camilo,alfaro,sistemas;0,camilo,alfaro,agronomia;0,camilo,alfaro,agronomia;0,zxcvbnm,alfaro,agronomia;9,angie,castaneda,sistemas;9,angie,castaneda,sistemas;0,camilo,alfaro,sistemas;
