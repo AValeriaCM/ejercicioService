@@ -28,7 +28,7 @@ public class UsuarioController {
 	@GetMapping("/listarPageable/{lazy}/{page}/{size}")
 	public ResponseEntity<Page<Usuario>> retornPageable(@PathVariable int page, @PathVariable int size, @PathVariable boolean lazy){
 		Page<Usuario> listaUsuario= usuarioService.listarPaginado(page, size, lazy);
-		return new ResponseEntity<Page<Usuario>>(listaUsuario, HttpStatus.OK);
+		return new ResponseEntity<Page<Usuario>>(listaUsuario, HttpStatus.OK);;
 	}
 	
 	@PostMapping("/guardar")
