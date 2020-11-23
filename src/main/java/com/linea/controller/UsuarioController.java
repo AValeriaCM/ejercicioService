@@ -2,6 +2,7 @@ package com.linea.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,20 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.linea.entity.Usuario;
 import com.linea.service.IUsuarioService;
 
-
-
 @PreAuthorize("hasAuthority('Usuario')")
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-	
+	@Autowired
 	private IUsuarioService usuarioService;
 	
 	@GetMapping("/listarPageable/{lazy}/{page}/{size}")
 	public ResponseEntity<Page<Usuario>> retornPageable(@PathVariable int page, @PathVariable int size, @PathVariable boolean lazy){
 		Page<Usuario> listaUsuario= usuarioService.listarPaginado(page, size, lazy);
-		return new ResponseEntity<Page<Usuario>>(listaUsuario);
+		return new ResponseEntity<Page<Usuario>>(listaUsuario, HttpStatus.OK);
 	}
 	
 	@PostMapping("/guardar")
